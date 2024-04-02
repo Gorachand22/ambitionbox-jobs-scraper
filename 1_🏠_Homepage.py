@@ -66,7 +66,7 @@ with st.sidebar:
                 st.write(f"**{page_num}** Jobs found with **{query}**")
                 for i in range(1, page_num+1):
                     webpage=requests.get(f'https://www.ambitionbox.com/jobs/search?tag={query}&page={i}', headers=headers).text
-                    soup1 = BeautifulSoup(webpage, 'lxml')
+                    soup1 = BeautifulSoup(webpage, 'html.parser')
                     page1 = soup1.find_all("div", class_ = "jobsInfoCardCont")
 
                 
