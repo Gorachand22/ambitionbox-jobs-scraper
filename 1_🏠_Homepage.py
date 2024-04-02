@@ -47,7 +47,7 @@ with st.sidebar:
     if st.button("Scrap"):
         try:
             webpage=requests.get(f'https://www.ambitionbox.com/jobs/search?tag={query}&page=1', headers=headers).text
-            soup = BeautifulSoup(webpage, 'lxml')
+            soup = BeautifulSoup(webpage, 'html.parser')
         except:
             st.error("Something went wrong. Try another keyword")
         else:
